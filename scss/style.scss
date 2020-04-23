@@ -65,7 +65,7 @@ h3{
 
 p,
 label{
- font-size: 0.8rem;
+ font-size: 0.6rem;
 }
 
 
@@ -207,6 +207,53 @@ label{
     
 }
 
+.daily{
+    ul{
+        list-style: none;
+        padding: 0;
+        li{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            background-color: $white-card-bg;
+            border-radius: 5px;
+            margin: 1rem 0;
+            
+            div{
+                display: flex;
+                flex-flow: column nowrap;
+                align-content: center;
+                justify-content: center;
+                p{
+                    margin: 1.5rem 0 1rem 2rem;
+                    text-transform: capitalize;
+                    //flex: 1 0 90%;   
+                }
+                img{
+                    width: 20px;
+                    height: 20px;
+                    margin: 1.5rem 2rem 1rem 0;
+                    flex-basis: auto;
+                }
+                h3{
+                    margin: 0 0 2rem 2rem;
+                }
+                .percentage{
+                    margin: 0 2rem 2rem 0;
+                    font-size: 0.6rem;
+                    color: $lime-green;
+                    font-weight: bold;
+                    &::before{
+                        content: url(../images/icon-up.svg);
+                        color: $lime-green; 
+                    } 
+                }
+            }
+               
+             
+        }
+    }
+}
 
 
 //PSEUDO 

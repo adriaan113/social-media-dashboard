@@ -49,12 +49,48 @@ const social= [
     }
 ];
 
+const darkCardBg = 'hsl(228, 28%, 20%)';
+const whiteCardBg = 'hsl(227, 47%, 96%)'
+const darkMainBg = 'hsl(230, 17%, 14%)';
+const whiteMainBg = 'hsl(0, 0%, 100%)';
+const darkTextSecondary =  'hsl(228, 34%, 66%)';
+const darkTextPrimary = 'hsl(0, 0%, 100%)';
+const whiteTextSecondary = 'hsl(228, 12%, 44%)';
+const whiteTextPrimary = 'hsl(230, 17%, 14%)';
+
 new Vue({
-    el:".daily",
-    data: {
-        social: social
+    el:'.wrapper',
+    data:{
+        social: social,
+        light: true,
+        background: '',
+        textColorP: '',
+        textColorH3: ''
+        
     },
     methods:{
+        darkLight: function(){
 
+            const body= document.querySelector('body');
+
+            if(this.light === true){
+                this.background = darkCardBg;
+                this.textColorP = darkTextSecondary;
+                this.textColorH3 = darkTextPrimary;
+                body.style.backgroundColor= darkMainBg;
+                this.light = false;
+                
+                
+            }else if(this.light === false){
+                this.background=  whiteCardBg;
+                this.textColorP = whiteTextSecondary;
+                this.textColorH3 = whiteTextPrimary;
+                body.style.backgroundColor= whiteMainBg;
+                this.light = true;
+                
+                
+            }
+            
+        }
     }
 });

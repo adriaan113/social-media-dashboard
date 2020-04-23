@@ -12,7 +12,7 @@
   <title>Frontend Mentor | ADRIAAN PADRIAAN</title>
 
 </head>
-<body>
+<body id="body">
 
   <div class="wrapper">
 
@@ -25,7 +25,7 @@
         <p>dark mode</p>
         <label> 
           <!-- <legend>Dark Mode</legend> -->
-          <input type="checkbox">
+          <input v-on:click="darkLight" type="checkbox">
           <span class="slider round"></span>
       </label>
       </div>
@@ -76,62 +76,16 @@
       <section class="daily">
         <h3>Overview - Today</h3>
         <ul>
-          <li v-for="x in social">
+          <li v-for="x in social" v-bind:style="{backgroundColor: background}">
             <div>
-              <p>{{x.type}}</p>
-              <img v-bind:src="x.img" alt="">
+              <p v-bind:style="{color: textColorP}">{{x.type}}</p>
+              <h3 v-bind:style="{color: textColorH3}">{{x.number}}</h3>
             </div>
-            <h3>{{x.number}}</h3>
-            <p>{{x.percentage}}%</p>
+           <div>
+            <img v-bind:src="x.img" alt="">
+            <p class="percentage">{{x.percentage}}%</p>
+           </div>
           </li>
-          <!-- <li>
-            <div>
-              <p>Likes</p>
-              <img src="" alt="">
-            </div>
-            <h3>52</h3>
-            <p>2%</p>
-          </li>
-          <li><div>
-            <p>Likes</p>
-            <img src="" alt="">
-          </div>
-          <h3>5462</h3>
-          <p>2257%</p></li>
-          <li><div>
-            <p>Profile views</p>
-            <img src="" alt="">
-          </div>
-          <h3>52k</h3>
-          <p>1375%</p></li>
-          <li>
-            <div>
-              <p>Retweets</p>
-              <img src="" alt="">
-            </div>
-            <h3>117</h3>
-            <p>303%</p>
-          </li>
-          <li>
-            <div>
-              <p>Likes</p>
-              <img src="" alt="">
-            </div>
-            <h3>507</h3>
-            <p>553%</p>
-          </li>
-          <li><div>
-            <p>Likes</p>
-            <img src="" alt="">
-          </div>
-          <h3>107</h3>
-          <p>19%</p></li>
-          <li><div>
-            <p>Total views</p>
-            <img src="" alt="">
-          </div>
-          <h3>1407</h3>
-          <p>12%</p></li> -->
         </ul>
       </section>
     </main>
